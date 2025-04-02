@@ -1,0 +1,17 @@
+// Usage min-width: @include mq($large) { ... }
+
+// Usage max-width: @include mq-max($large) { ... }
+
+@mixin mq($breakpoint) {
+
+  @media all and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin mq-max($breakpoint) {
+
+  @media all and (max-width: calc($breakpoint - 1px)) {
+    @content;
+  }
+}

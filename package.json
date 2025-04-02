@@ -1,0 +1,21 @@
+{
+  "name": "ehouse-dev-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sass --watch assets:assets --no-source-map --style=compressed & tailwindcss -i assets/tailwind.css -o assets/theme.css --watch & shopify theme dev --store=kris-johnson-sample-store.myshopify.com",
+    "build": "sass assets:assets --no-source-map --style=compressed && tailwindcss -i assets/tailwind.css -o assets/theme.css --minify",
+    "push-new": "shopify theme push --store=kris-johnson-sample-store.myshopify.com --unpublished",
+    "push": "shopify theme push --store=kris-johnson-sample-store.myshopify.com",
+    "pull": "shopify theme pull --store=kris-johnson-sample-store.myshopify.com",
+    "logout": "shopify auth logout"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.86.1",
+    "tailwindcss": "^4.1.1"
+  }
+}
