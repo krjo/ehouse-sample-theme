@@ -1,0 +1,56 @@
+<section aria-label="Brand feature columns" style="background-color: {{ section.settings.background_color }};">
+  <div class="max-w-screen-xl mx-auto grid gap-12 py-12 lg:flex lg:gap-0 lg:justify-around">
+    {% for block in section.blocks %}
+      <div class="text-center">
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: height: 50 }}"
+            alt="{{ block.settings.image.alt }}"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+            class="h-12 w-auto lg:h-14 mb-4 lg:mb-5 inline-block">
+        {% endif %}
+        <p class="font-bold lg:text-lg">{{ block.settings.text | newline_to_br }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Feature Columns",
+  "presets": [
+    {
+      "name": "Feature Columns"
+    }
+  ],
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "SVG"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -50,13 +50,48 @@
       "settings": {
         "overline": "IN STORES & ONLINE",
         "title": "50% OFF\nEVERYTHING",
-        "text_color": "#000",
+        "text_color": "#000000",
         "mobile_image": "shopify://shop_images/hero-image-mobile.jpg",
         "desktop_image": "shopify://shop_images/hero-image.jpg"
+      }
+    },
+    "feature_columns_89pFUg": {
+      "type": "feature-columns",
+      "blocks": {
+        "column_xxFryD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/shipping-icon.svg",
+            "text": "FREE SHIPPING ON\nALL ORDERS"
+          }
+        },
+        "column_mB6fhx": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/returns-icon.svg",
+            "text": "FREE RETURNS\nON ALL ORDERS"
+          }
+        },
+        "column_LnB8yB": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/checkout-icon.svg",
+            "text": "SAFE & SECURE\nCHECKOUT"
+          }
+        }
+      },
+      "block_order": [
+        "column_xxFryD",
+        "column_mB6fhx",
+        "column_LnB8yB"
+      ],
+      "settings": {
+        "background_color": "#fafbfb"
       }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "feature_columns_89pFUg"
   ]
 }
