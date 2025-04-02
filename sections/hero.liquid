@@ -38,6 +38,16 @@
 {% schema %}
 {
   "name": "Hero",
+  "disabled_on": {
+    "groups": [
+      "header"
+    ]
+  },
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ],
   "settings": [
     {
       "type": "text",
@@ -82,11 +92,6 @@
           "label": "Link URL"
         }
       ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Hero"
     }
   ]
 }
