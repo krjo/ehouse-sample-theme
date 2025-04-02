@@ -13,6 +13,10 @@
   --breakpoint-desktop: 1440px;
 }
 
+.button {
+  @apply bg-black hover:bg-blue text-white px-10 uppercase tracking-widest text-sm py-3.5 leading-none font-semibold rounded-[5px] text-center;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: #141414;

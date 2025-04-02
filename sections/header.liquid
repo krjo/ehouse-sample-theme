@@ -1,12 +1,12 @@
 <section class="px-6 lg:px-10" aria-label="header">
 
-  <div class="max-w-desktop mx-auto flex items-center justify-between py-10">
+  <div class="max-w-desktop mx-auto flex items-center justify-between py-5 lg:py-10">
 
     <mobile-menu-button role="button" aria-label="Open mobile menu" class="block lg:hidden">
-      {% render 'icon-hamburger', classes: 'h-6 w-auto block' %}
+      {% render 'icon-hamburger', classes: 'h-3 w-auto block' %}
     </mobile-menu-button>
 
-    <div class="flex items-center justify-between flex-1">
+    <div class="flex items-center justify-center lg:justify-between flex-1">
 
       <a href="/" class="block lg:mr-16">
         <img 
@@ -16,7 +16,7 @@
           loading="eager" 
           fetchpriority="high"
           style="max-width: {{ settings.logo_width }}px;"
-          class="h-auto w-auto" 
+          class="h-auto w-[120px] lg:w-full" 
           alt="{{ settings.logo.alt | escape }}">
       </a>
 
@@ -35,13 +35,14 @@
     <div class="flex items-center gap-8">
 
       <form method="get" action="{{ routes.search_url }}" role="search" class="hidden lg:flex pr-4 items-center rounded-full border border-solid border-medium-gray">
+        <label for="search" class="sr-clickable">Search store</label>
         <input 
-          type="search" 
+          type="search"
+          id="search"
           name="q"
           value="{{ search.terms | escape }}"
           placeholder="Search" 
-          class="px-4 py-2 text-xs w-44"
-          aria-label="Search">
+          class="px-4 py-2 text-xs w-44">
         <button type="submit">
           {% render 'icon-search', classes: 'h-3 w-3 text-[#767676]' %}
         </button>
@@ -57,8 +58,12 @@
       </div>
 
       <cart-button role="button" aria-label="Open cart" class="block relative">
-        {% render 'icon-cart', classes: 'h-6 w-auto block' %}
-        <cart-item-count class="bg-blue text-white h-3.5 w-3.5 rounded-full leading-3.5 text-[10px] text-center font-bold absolute -top-1.5 -right-2">{{ cart.item_count | default: 3 }}</cart-item-count>
+        {% render 'icon-cart', classes: 'h-5 lg:h-6 w-auto block' %}
+        <cart-item-count class="bg-blue text-white h-3 w-3 rounded-full leading-3.5 text-[10px] text-center font-bold absolute -top-1 -right-1.5">
+          {% if cart.item_count > 0  %}
+            {{ cart.item_count }}
+          {% endif %}
+        </cart-item-count>
       </cart-button>
 
     </div>
@@ -72,7 +77,7 @@
 {
   "name": "Header",
   "enabled_on": {
-    "groups": ["header"]
+    "groups": [ "header" ]
   },
   "settings": [
   ]

@@ -7,11 +7,52 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
+ {
   "sections": {
     "hero": {
       "type": "hero",
+      "blocks": {
+        "link_YjFVeN": {
+          "type": "link",
+          "settings": {
+            "link_text": "Women",
+            "link_url": "shopify://collections/all"
+          }
+        },
+        "link_NnF6rr": {
+          "type": "link",
+          "settings": {
+            "link_text": "Men",
+            "link_url": "shopify://products/the-compare-at-price-snowboard"
+          }
+        },
+        "link_XWXG67": {
+          "type": "link",
+          "settings": {
+            "link_text": "Kids",
+            "link_url": "shopify://products/the-compare-at-price-snowboard"
+          }
+        },
+        "link_iMjara": {
+          "type": "link",
+          "settings": {
+            "link_text": "Home",
+            "link_url": "shopify://products/the-3p-fulfilled-snowboard"
+          }
+        }
+      },
+      "block_order": [
+        "link_YjFVeN",
+        "link_NnF6rr",
+        "link_XWXG67",
+        "link_iMjara"
+      ],
       "settings": {
+        "overline": "IN STORES & ONLINE",
+        "title": "50% OFF\nEVERYTHING",
+        "text_color": "#000",
+        "mobile_image": "shopify://shop_images/hero-image-mobile.jpg",
+        "desktop_image": "shopify://shop_images/hero-image.jpg"
       }
     }
   },
