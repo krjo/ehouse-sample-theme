@@ -55,6 +55,48 @@
         "desktop_image": "shopify://shop_images/hero-image.jpg"
       }
     },
+    "image_with_text_grid_GztEqw": {
+      "type": "image-with-text-grid",
+      "blocks": {
+        "column_XeReXE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/new-arrivals-image.jpg",
+            "title": "NEW ARRIVALS",
+            "body": "Our latest Summer styles. Fresh. Fun. Fabulous.",
+            "link_text_1": "Women",
+            "link_url_1": "shopify://collections/all",
+            "link_text_2": "Mens",
+            "link_url_2": "shopify://collections/all",
+            "link_text_3": "Kids",
+            "link_url_3": "shopify://products/gift-card",
+            "link_text_4": "Home",
+            "link_url_4": "shopify://pages/data-sale-opt-out"
+          }
+        },
+        "column_EiGLYa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/dorm-image.jpg",
+            "title": "COLLEGE BOUND",
+            "body": "New places and new faces. Same great style.",
+            "link_text_1": "SHOP DORM DECOR",
+            "link_url_1": "shopify://collections/all",
+            "link_text_2": "",
+            "link_url_2": "",
+            "link_text_3": "",
+            "link_url_3": "",
+            "link_text_4": "",
+            "link_url_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_XeReXE",
+        "column_EiGLYa"
+      ],
+      "settings": {}
+    },
     "feature_columns_89pFUg": {
       "type": "feature-columns",
       "blocks": {
@@ -92,6 +134,7 @@
   },
   "order": [
     "hero",
+    "image_with_text_grid_GztEqw",
     "feature_columns_89pFUg"
   ]
 }

@@ -1,6 +1,6 @@
-<section class="px-6 lg:px-10" aria-label="header">
+<section class="px-6 lg:px-10">
 
-  <div class="max-w-desktop mx-auto flex items-center justify-between py-5 lg:py-10">
+  <div class="max-w-desktop mx-auto lg:gap-4 flex items-center justify-between py-5 lg:py-10">
 
     <mobile-menu-button role="button" aria-label="Open mobile menu" class="block lg:hidden">
       {% render 'icon-hamburger', classes: 'h-3 w-auto block' %}
@@ -21,7 +21,7 @@
       </a>
 
       <nav class="hidden lg:block flex-1">
-        <ul class="list-none flex justify-center gap-12">
+        <ul class="list-none flex justify-center gap-8 xl:gap-12">
           {% for link in linklists.main-menu.links %}
             <li>
               <a href="{{ link.url }}" class="uppercase font-bold tracking-[2px] hover:text-blue text-xs {% if link.title contains 'Sale' %}text-red{% endif %}">{{ link.title }}</a>

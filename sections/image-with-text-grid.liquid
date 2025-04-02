@@ -1,0 +1,114 @@
+<section class="lg:px-10 lg:mb-14">
+  <div class="max-w-screen-xl mx-auto lg:grid lg:grid-cols-2 gap-8">
+    {% for block in section.blocks %}
+      <div class="relative">
+        {% if block.settings.image %}
+          <img
+            src="{{ block.settings.image | image_url: width: 1000 }}"
+            alt="{{ block.settings.image.alt }}"
+            width="{{ block.settings.image.width }}"
+            height="{{ block.settings.image.height }}"
+            class="block w-full h-auto">
+        {% endif %}
+        <div class="lg:absolute lg:p-7 lg:bottom-0 lg:left-0 w-full">
+          <div class="bg-white px-7 pt-9 pb-20 lg:pb-10 lg:px-8 text-center">
+            <h2 class="text-lg lg:text-[28px] font-medium leading-none tracking-[2px] lg:tracking-[3px] mb-5">{{ block.settings.title }}</h2>
+            {% if block.settings.body != blank %}
+              <p class="mb-5 text-sm lg:text-base tracking-wide px-12 lg:px-0">{{ block.settings.body }}</p>
+            {% endif %}
+            <ul class="flex gap-3 lg:gap-5 justify-center">
+              {% for i in (1..4) %}
+                {% assign link_text = 'link_text_' | append: i %}
+                {% assign link_url = 'link_url_' | append: i %}
+                {% if block.settings[link_text] != blank and block.settings[link_url] != blank %}
+                  {% if i > 1 %}
+                    <span>|</span>
+                  {% endif %}
+                  <li>
+                    <a href="{{ block.settings[link_url] }}" class="font-bold text-sm uppercase tracking-[2px] underline hover:text-blue">{{ block.settings[link_text] }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with Text Grid",
+  "presets": [
+    {
+      "name": "Image with Text Grid"
+    }
+  ],
+  "settings": [],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "JPG - 1000px wide"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "text",
+          "id": "link_text_1",
+          "label": "Link Text 1"
+        },
+        {
+          "type": "url",
+          "id": "link_url_1",
+          "label": "Link URL 1"
+        },
+        {
+          "type": "text",
+          "id": "link_text_2",
+          "label": "Link Text 2"
+        },
+        {
+          "type": "url",
+          "id": "link_url_2",
+          "label": "Link URL 2"
+        },
+        {
+          "type": "text",
+          "id": "link_text_3",
+          "label": "Link Text 3"
+        },
+        {
+          "type": "url",
+          "id": "link_url_3",
+          "label": "Link URL 3"
+        },
+        {
+          "type": "text",
+          "id": "link_text_4",
+          "label": "Link Text 4"
+        },
+        {
+          "type": "url",
+          "id": "link_url_4",
+          "label": "Link URL 4"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
