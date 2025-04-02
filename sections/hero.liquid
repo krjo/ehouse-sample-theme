@@ -1,4 +1,4 @@
-<section class="relative w-full overflow-hidden mb-14">
+<section class="relative w-full overflow-hidden mb-20 lg:mb-14">
   <picture>
     <source
       srcset="{{ section.settings.desktop_image | image_url: width: 2560 }}"
@@ -12,12 +12,12 @@
       height="{{ section.settings.mobile_image.height }}"
       class="w-full h-full object-cover block lg:min-h-[700px]">
   </picture>
-  <div class="lg:absolute text-center w-full items-center lg:top-1/2 left-0 lg:-translate-y-2/4 -mt-20 lg:mt-0 px-3 lg:px-0">
-    <div class="lg:max-w-xl lg:mx-32 bg-white lg:bg-transparent relative py-6 lg:py-0 border border-solid border-medium-gray lg:border-none">
+  <div class="lg:absolute text-center w-full items-center lg:top-1/2 left-0 lg:-translate-y-2/4 -mt-24 lg:mt-0 px-3 lg:px-0">
+    <div class="lg:max-w-xl lg:mx-32 2xl:mx-40 bg-white lg:bg-transparent relative py-6 lg:py-0 border border-solid border-medium-gray lg:border-none">
       <div style="color: {{ section.settings.text_color }}">
         {% if section.settings.title %}
           <h1 class="text-[36px] lg:text-7xl xl:text-[80px] leading-none font-bold tracking-wider">
-            {% if section.settings.overline %}
+            {% if section.settings.overline != blank %}
               <small class="text-sm lg:text-xl mb-4 lg:mb-6 tracking-wide block font-medium">{{ section.settings.overline }}</small>
             {% endif %}
             {{ section.settings.title | newline_to_br }}

@@ -55,6 +55,17 @@
         "desktop_image": "shopify://shop_images/hero-image.jpg"
       }
     },
+    "image_with_text_overlay_iHpCeg": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "shopify://shop_images/vacay-image.jpg",
+        "title": "Vacay This Way",
+        "body": "Everything you need for your summer get away!",
+        "link_text": "SHOP SUMMER ESSENTIALS",
+        "link_url": "shopify://products/the-inventory-not-tracked-snowboard",
+        "alignment": "right"
+      }
+    },
     "image_with_text_grid_GztEqw": {
       "type": "image-with-text-grid",
       "blocks": {
@@ -63,7 +74,8 @@
           "settings": {
             "image": "shopify://shop_images/new-arrivals-image.jpg",
             "title": "NEW ARRIVALS",
-            "body": "Our latest Summer styles. Fresh. Fun. Fabulous.",
+            "body": "Our latest Summer styles.",
+            "body_2": "Fresh. Fun. Fabulous.",
             "link_text_1": "Women",
             "link_url_1": "shopify://collections/all",
             "link_text_2": "Mens",
@@ -79,7 +91,8 @@
           "settings": {
             "image": "shopify://shop_images/dorm-image.jpg",
             "title": "COLLEGE BOUND",
-            "body": "New places and new faces. Same great style.",
+            "body": "New places and new faces.",
+            "body_2": "Same great style.",
             "link_text_1": "SHOP DORM DECOR",
             "link_url_1": "shopify://collections/all",
             "link_text_2": "",
@@ -134,6 +147,7 @@
   },
   "order": [
     "hero",
+    "image_with_text_overlay_iHpCeg",
     "image_with_text_grid_GztEqw",
     "feature_columns_89pFUg"
   ]

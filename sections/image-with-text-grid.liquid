@@ -2,19 +2,23 @@
   <div class="max-w-screen-xl mx-auto lg:grid lg:grid-cols-2 gap-8">
     {% for block in section.blocks %}
       <div class="relative">
-        {% if block.settings.image %}
-          <img
-            src="{{ block.settings.image | image_url: width: 1000 }}"
-            alt="{{ block.settings.image.alt }}"
-            width="{{ block.settings.image.width }}"
-            height="{{ block.settings.image.height }}"
-            class="block w-full h-auto">
-        {% endif %}
+        <img
+          src="{{ block.settings.image | image_url: width: 1000 }}"
+          alt="{{ block.settings.image.alt }}"
+          width="{{ block.settings.image.width }}"
+          height="{{ block.settings.image.height }}"
+          loading="lazy"
+          class="block w-full h-auto">
         <div class="lg:absolute lg:p-7 lg:bottom-0 lg:left-0 w-full">
           <div class="bg-white px-7 pt-9 pb-20 lg:pb-10 lg:px-8 text-center">
-            <h2 class="text-lg lg:text-[28px] font-medium leading-none tracking-[2px] lg:tracking-[3px] mb-5">{{ block.settings.title }}</h2>
+            <h2 class="text-[20px] lg:text-[28px] font-medium leading-none tracking-[2px] lg:tracking-[3px] mb-5">{{ block.settings.title }}</h2>
             {% if block.settings.body != blank %}
-              <p class="mb-5 text-sm lg:text-base tracking-wide px-12 lg:px-0">{{ block.settings.body }}</p>
+              <p class="mb-5 text-sm lg:text-base tracking-wide px-12 lg:px-0">
+                {{ block.settings.body }}
+                {% if block.settings.body_2 != blank %}
+                  <span class="block md:inline">{{ block.settings.body_2 }}</span>
+                {% endif %}
+              </p>
             {% endif %}
             <ul class="flex gap-3 lg:gap-5 justify-center">
               {% for i in (1..4) %}
@@ -65,7 +69,13 @@
         {
           "type": "textarea",
           "id": "body",
-          "label": "Body"
+          "label": "Body 1"
+        },
+        {
+          "type": "textarea",
+          "id": "body_2",
+          "label": "Body 2",
+          "info": "Appears below Body 1 on mobile"
         },
         {
           "type": "text",

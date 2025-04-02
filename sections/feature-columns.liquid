@@ -8,6 +8,7 @@
             alt="{{ block.settings.image.alt }}"
             width="{{ block.settings.image.width }}"
             height="{{ block.settings.image.height }}"
+            loading="lazy"
             class="h-12 w-auto lg:h-14 mb-4 lg:mb-5 inline-block">
         {% endif %}
         <p class="font-bold lg:text-lg">{{ block.settings.text | newline_to_br }}</p>

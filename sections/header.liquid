@@ -2,7 +2,7 @@
 
   <div class="max-w-desktop mx-auto lg:gap-4 flex items-center justify-between py-5 lg:py-10">
 
-    <mobile-menu-button role="button" aria-label="Open mobile menu" class="block lg:hidden">
+    <mobile-menu-button role="button" aria-label="Open mobile menu" class="block lg:hidden cursor-pointer">
       {% render 'icon-hamburger', classes: 'h-3 w-auto block' %}
     </mobile-menu-button>
 
@@ -43,7 +43,7 @@
           value="{{ search.terms | escape }}"
           placeholder="Search" 
           class="px-4 py-2 text-xs w-44">
-        <button type="submit">
+        <button type="submit" class="cursor-pointer">
           {% render 'icon-search', classes: 'h-3 w-3 text-[#767676]' %}
         </button>
       </form>
@@ -57,7 +57,7 @@
         {% endif %}
       </div>
 
-      <cart-button role="button" aria-label="Open cart" class="block relative">
+      <cart-button role="button" aria-label="Open cart" class="block relative cursor-pointer">
         {% render 'icon-cart', classes: 'h-5 lg:h-6 w-auto block' %}
         <cart-item-count class="bg-blue text-white h-3 w-3 rounded-full leading-3.5 text-[10px] text-center font-bold absolute -top-1 -right-1.5">
           {% if cart.item_count > 0  %}

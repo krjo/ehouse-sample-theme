@@ -1,0 +1,85 @@
+<section class="mb-20 lg:mb-14">
+
+  <div class="relative">
+
+    <img
+      src="{{ section.settings.image | image_url: width: 1600 }}"
+      alt="{{ section.settings.image.alt }}"
+      width="{{ section.settings.image.width }}"
+      height="{{ section.settings.image.height }}"
+      loading="lazy"
+      class="block w-full h-auto md:max-w-3/4 lg:max-w-[65%] {% if section.settings.alignment == 'right' %}ml-auto{% else %}mr-auto{% endif %}">
+
+      <div class="bg-white md:absolute md:top-1/2 md:-translate-y-2/4 md:left-14 xl:left-auto xl:right-[55%] p-5 pb-0 md:p-6 md:w-[500px] lg:w-[600px]">
+        <div class="p-5 md:p-16 lg:p-20 border border-solid border-medium-gray">
+
+          <h2 class="text-[28px] lg:text-[42px] font-bold leading-none mb-4 lg:mb-6 tracking-wide">{{ section.settings.title }}</h2>
+
+          {% if section.settings.body != blank %}
+            <p class="text-sm lg:text-base mb-4 lg:mb-7 tracking-wide">{{ section.settings.body }}</p>
+          {% endif %}
+
+          {% if section.settings.link_url != blank and section.settings.link_text != blank %}
+            <a href="{{ section.settings.link_url }}" class="button w-full md:w-auto">{{ section.settings.link_text }}</a>
+          {% endif %}
+
+        </div>
+      </div>
+
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Image with Text Overlay",
+  "presets": [
+    {
+      "name": "Image with Text Overlay"
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Image Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Image Left"
+        },
+        {
+          "value": "right",
+          "label": "Image Right"
+        }
+      ],
+      "default": "right"
+    }
+  ]
+}
+{% endschema %}
