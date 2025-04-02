@@ -1,39 +1,67 @@
 <section class="px-6 lg:px-10" aria-label="header">
 
-  <div class="max-w-screen-xl mx-auto flex items-center">
+  <div class="max-w-desktop mx-auto flex items-center justify-between py-10">
 
     <mobile-menu-button role="button" aria-label="Open mobile menu" class="block lg:hidden">
-      {% render 'icon-hamburger', classes: 'h-8 w-auto block' %}
+      {% render 'icon-hamburger', classes: 'h-6 w-auto block' %}
     </mobile-menu-button>
 
-    <nav class="hidden lg:block">
-      <ul class="list-none flex gap-10">
-        {% for link in linklists.main-menu.link %}
-          <li>
-            <a href="{{ link.url }}" class="{% if link.url contains 'sale' %}text-red{% endif %}">{{ link.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
+    <div class="flex items-center justify-between flex-1">
 
-    <div class="hidden lg:flex gap-8 border-r border-solid border-medium-gray pr-6 mr-6">
+      <a href="/" class="block lg:mr-16">
+        <img 
+          src="{{ settings.logo | image_url: width: 500 }}" 
+          height="{{ settings.logo.height }}" 
+          width="{{ settings.logo.width }}" 
+          loading="eager" 
+          fetchpriority="high"
+          style="max-width: {{ settings.logo_width }}px;"
+          class="h-auto w-auto" 
+          alt="{{ settings.logo.alt | escape }}">
+      </a>
 
-      {% comment %} search form {% endcomment %}
+      <nav class="hidden lg:block flex-1">
+        <ul class="list-none flex justify-center gap-12">
+          {% for link in linklists.main-menu.links %}
+            <li>
+              <a href="{{ link.url }}" class="uppercase font-bold tracking-[2px] hover:text-blue text-xs {% if link.title contains 'Sale' %}text-red{% endif %}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
 
-      <div class="text-center text-sm">
+    </div>
+
+    <div class="flex items-center gap-8">
+
+      <form method="get" action="{{ routes.search_url }}" role="search" class="hidden lg:flex pr-4 items-center rounded-full border border-solid border-medium-gray">
+        <input 
+          type="search" 
+          name="q"
+          value="{{ search.terms | escape }}"
+          placeholder="Search" 
+          class="px-4 py-2 text-xs w-44"
+          aria-label="Search">
+        <button type="submit">
+          {% render 'icon-search', classes: 'h-3 w-3 text-[#767676]' %}
+        </button>
+      </form>
+
+      <div class="hidden lg:block leading-snug text-center text-xs text-dark-gray pr-8 border-r border-solid border-medium-gray">
         {% if customer %}
           <a href="/account/login" class="underline">My Account</a>
         {% else %}
           My account
-          <a href="/account/login" class="underline">Sign in or Sign up</a>
+          <a href="/account/login" class="underline block">Sign in or Sign up</a>
         {% endif %}
       </div>
 
-    </div>
+      <cart-button role="button" aria-label="Open cart" class="block relative">
+        {% render 'icon-cart', classes: 'h-6 w-auto block' %}
+        <cart-item-count class="bg-blue text-white h-3.5 w-3.5 rounded-full leading-3.5 text-[10px] text-center font-bold absolute -top-1.5 -right-2">{{ cart.item_count | default: 3 }}</cart-item-count>
+      </cart-button>
 
-    <cart-button role="button" aria-label="Open cart" class="block">
-      {% render 'icon-cart', classes: 'h-8 w-auto block' %}
-    </cart-button>
+    </div>
 
   </div>
 

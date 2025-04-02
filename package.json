@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/theme.css --watch & shopify theme dev --store=kris-johnson-sample-store.myshopify.com",
+    "dev": "shopify theme dev --store=kris-johnson-sample-store.myshopify.com & npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/theme.css --watch",
     "build": "npx @tailwindcss/cli -i ./assets/tailwind.css -o ./assets/theme.css --minify",
     "push-new": "shopify theme push --store=kris-johnson-sample-store.myshopify.com --unpublished",
     "push": "shopify theme push --store=kris-johnson-sample-store.myshopify.com",

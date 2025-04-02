@@ -1,1 +1,33 @@
-<section class="" aria-label="announcement-bar"></section>
+<section class="px-4 h-12 flex justify-center font-bold text-sm items-center tracking-[1px]" aria-label="announcement-bar" style="background-color: {{ section.settings.background_color }}; color: {{ section.settings.text_color }};">
+  {{ section.settings.text }}
+</section>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "presets": [
+    {
+      "name": "Announcement Bar"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#005BC4"
+    }
+  ]
+}
+{% endschema %}

@@ -30,13 +30,23 @@
 
     {{ content_for_header }}
 
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+    %}
+
+    {% style %}
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ settings.type_header_font | font_face: font_display: 'swap' }}
+    {% endstyle %}
+
     {{ 'theme.css' | asset_url | stylesheet_tag }}
 
   </head>
 
-  <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
+  <body>
 
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+    <a class="skip-to-content-link sr-clickable" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
 
