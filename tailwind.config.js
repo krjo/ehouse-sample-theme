@@ -12,11 +12,14 @@ module.exports = {
         // 'alias-bold': ["'Alias Bold'", 'Helvetica', 'Arial', 'sans-serif']
       },
       colors: {
-        'black': '#202020',
+        'black': '#141414',
         'white': '#fff',
-        'gray': '#868686',
-        'red': '#868686',
-        'blue': '#779FFF',
+        'gray': '#A3A3A3',
+        'red': '#FF2500',
+        'blue': '#005BC4',
+        'light-gray': '#F7F8F8',
+        'dark-gray': '#4A4A4A',
+        'medium-gray': '#D8D8D8'
       },
       screens: {
         'xxl': {'min': '1536px'},

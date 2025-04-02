@@ -1,27 +1,6 @@
-@use 'helpers' as *;
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-// @font-face {
-//   font-family: "Causten";
-//   src: url('./Causten.woff2') format("woff2");
-//   font-display: auto;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-stretch: normal;
-// }
-
-// @font-face {
-//   font-family: "Causten";
-//   src: url('./Causten-Bold.otf') format("opentype");
-//   font-display: auto;
-//   font-style: normal;
-//   font-weight: 700;
-//   font-stretch: normal;
-// }
-
-summary {
+/* summary {
   display: block;
   cursor: pointer;
 }
@@ -70,4 +49,4 @@ input[type="search"] {
   padding: 0;
   position: absolute;
   white-space: nowrap;
-}
+} */

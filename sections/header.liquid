@@ -1,0 +1,52 @@
+<section class="px-6 lg:px-10" aria-label="header">
+
+  <div class="max-w-screen-xl mx-auto flex items-center">
+
+    <mobile-menu-button role="button" aria-label="Open mobile menu" class="block lg:hidden">
+      {% render 'icon-hamburger', classes: 'h-8 w-auto block' %}
+    </mobile-menu-button>
+
+    <nav class="hidden lg:block">
+      <ul class="list-none flex gap-10">
+        {% for link in linklists.main-menu.link %}
+          <li>
+            <a href="{{ link.url }}" class="{% if link.url contains 'sale' %}text-red{% endif %}">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="hidden lg:flex gap-8 border-r border-solid border-medium-gray pr-6 mr-6">
+
+      {% comment %} search form {% endcomment %}
+
+      <div class="text-center text-sm">
+        {% if customer %}
+          <a href="/account/login" class="underline">My Account</a>
+        {% else %}
+          My account
+          <a href="/account/login" class="underline">Sign in or Sign up</a>
+        {% endif %}
+      </div>
+
+    </div>
+
+    <cart-button role="button" aria-label="Open cart" class="block">
+      {% render 'icon-cart', classes: 'h-8 w-auto block' %}
+    </cart-button>
+
+  </div>
+
+</section>
+
+
+{% schema %}
+{
+  "name": "Header",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+  ]
+}
+{% endschema %}
